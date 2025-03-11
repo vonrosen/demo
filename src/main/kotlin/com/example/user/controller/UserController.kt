@@ -29,8 +29,7 @@ class UserController(
             return HttpResponse.created(
                 AddLocalUserResponseDto(
                 newUser.name(),
-                newUser.email())
-            )
+                newUser.email()))
         }
     }
 
@@ -45,8 +44,7 @@ class UserController(
                 AddPaymentUserResponseDto(
                 newUser.name(),
                 newUser.email(),
-                newUser.ssn())
-            )
+                newUser.ssn()))
         }
     }
 
