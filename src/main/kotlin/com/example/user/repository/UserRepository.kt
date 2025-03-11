@@ -1,6 +1,6 @@
-package com.example.repository
+package com.example.user.repository
 
-import com.example.model.User
+import com.example.user.model.User
 import io.micronaut.data.annotation.Id
 import io.micronaut.data.jdbc.annotation.JdbcRepository
 import io.micronaut.data.model.query.builder.sql.Dialect
@@ -12,10 +12,12 @@ abstract class UserRepository : PageableRepository<User, Long> {
 
     abstract fun save(
         @NotBlank name: String,
-        @NotBlank email: String) : User
+        @NotBlank email: String,
+        paymentAccountId: String) : User
 
     abstract fun update(
         @Id id: Long,
         @NotBlank name: String,
-        @NotBlank email: String) : Long
+        @NotBlank email: String,
+        paymentAccountId: String) : Long
 }
